@@ -15,8 +15,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<!--<link rel="stylesheet" href="cssfolder/css.css">-->
-<style>
+<link rel="stylesheet" href="../cssfolder/css.css">
+<!--<style>
 body {
 	color: #566787;
 	background: #f5f5f5;
@@ -277,7 +277,7 @@ table.table .avatar {
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
-</style>
+</style>-->
 <script>
 $(document).ready(function(){
 	// Activate tooltip
@@ -378,7 +378,7 @@ $(document).ready(function(){
         />
       </a>
       <!-- Search form -->
-      <form class="d-none d-md-flex input-group w-auto my-auto">
+      <form class="d-none d-md-flex input-group w-auto my-auto" method="Post">
         <input
           autocomplete="off"
           type="search"
@@ -666,7 +666,7 @@ $(document).ready(function(){
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+                    <form method="post" action="../AjouterFournisseurServlet">
 				<div class="modal-header">						
 					<h4 class="modal-title">Add Fournisseur</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -674,23 +674,24 @@ $(document).ready(function(){
 				<div class="modal-body">					
 					<div class="form-group">
 						<label>Name</label>
-						<input type="text" class="form-control" required>
+                                                <input type="text" class="form-control" name="nom" required>
 					</div>
-					<div class="form-group">
-						<label>Email</label>
-						<input type="email" class="form-control" required>
-					</div>
+					
 					<div class="form-group">
 						<label>Address</label>
-						<textarea class="form-control" required></textarea>
+                                                <textarea class="form-control" name="adresse" required></textarea>
+					</div>
+                                    <div class="form-group">
+						<label>Email</label>
+                                                <input type="email" class="form-control"  name="email" required>
 					</div>
 					<div class="form-group">
 						<label>Telephone</label>
-						<input type="text" class="form-control" required>
+						<input type="text" class="form-control" name="telephone" required>
 					</div>
                                     <div class="form-group">
 						<label>SiteWeb</label>
-						<input type="text" class="form-control" required>
+                                                <input type="text" class="form-control" name="site_web" required>
 					</div>	
 				</div>
 				<div class="modal-footer">
@@ -705,7 +706,7 @@ $(document).ready(function(){
 <div id="editEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form method="post" action="AjouterFournisseurServlet">
 				<div class="modal-header">						
 					<h4 class="modal-title">Edit Fournisseur</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -744,7 +745,7 @@ $(document).ready(function(){
 <div id="deleteEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form method="post" action="AjouterFournisseurServlet">
 				<div class="modal-header">						
 					<h4 class="modal-title">Delete Founisseur</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
